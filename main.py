@@ -108,10 +108,10 @@ with body:
     upload_col,sample_col = st.beta_columns(2)
     #sample_col.header('Or select a sample file from below')
     #sample = sample_col.selectbox('Or select a sample file')
-    if sample != 'None':
-        file = open(sample, "r", encoding= 'cp1252')
+    #if sample != 'None':
+        #file = open(sample, "r", encoding= 'cp1252')
         #st.write(file)
-        rawtext = file.read()
+        #rawtext = file.read()
 
     upload_col.header('Upload text file here')
     uploaded_file = upload_col.file_uploader(
