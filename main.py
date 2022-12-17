@@ -113,7 +113,8 @@ with body:
     upload_col.header('Upload text file here')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
-    rawtext = uploaded_file
+    if uploaded_file is not None:
+         rawtext = str(uploaded_file.read(), 'cp1252')
     no_of_lines = st.slider("Select number of lines in summary", 3, 5, 7)
     if st.button('Get Summary'):
         with summary_container:
