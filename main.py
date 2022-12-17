@@ -6,18 +6,7 @@ from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
-import re
-#from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-#from pdfminer.converter import TextConverter
-#from pdfminer.layout import LAParams
-#from pdfminer.pdfpage import PDFPage
-import numpy as np
-import pandas as pd
-from PyPDF2 import PdfReader #For converting PDF to text
-import spacy
-from spacy.lang.en.stop_words import STOP_WORDS
-from string import punctuation
-from heapq import nlargest
+
 
 #from transformers import pipeline
 
@@ -117,40 +106,9 @@ with body:
     #rawtext = st.text_area('Enter Text Here')
 
     upload_col,sample_col = st.beta_columns(2)
-    sample_col.header('Input PDF file of the Legal Judgement')
-    sample = sample_col.file_uploader('Choose your .pdf file', type="pdf")
     
-                              
-   if sample != 'None':
-        reader = PdfReader(sample)
-        text = ""
-        for page in reader.pages:
-             text += page.extract_text() + "\n"
-        lone = text
-        with open('xxx.txt') as f:
-            clean_cont = f.read()#Obtain different sentences in form of a list
-        from nltk.tokenize import sent_tokenize
-        token_text = sent_tokenize(clean_cont)  
-        legal_doc = token_text
-        temp = ""
-        for eachDocument in legal_doc[:]:
-            #removes the paragraph lables 1. or 2. etc.
-            eachDocument = re.sub(r'(\d\d\d|\d\d|\d)\.\s', ' ', eachDocument)
-            #removes dot(.) i.e File No.1063
-            eachDocument = re.sub(r'(?<=[a-zA-Z])\.(?=\d)', '', eachDocument)
-            #removes dot(.) i.e File No.1063
-            eachDocument = re.sub(r'(?<=\d|[a-zA-Z])\.(?=\s[\da-z])', ' ', eachDocument)
-            #to remove the ending dot of abbr
-            eachDocument = re.sub(r'(?<=\d|[a-zA-Z])\.(?=\s?[\!\"\#\$\%\&\'\(\)\*\+\,\-\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~])', ' ', eachDocument)
-            #removes the other punctuations
-            eachDocument = re.sub(r'(?<!\.)[\!\"\#\$\%\&\'\(\)\*\+\,\-\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]',' ', eachDocument)
-            #remove \n from sentences
-            eachDocument = re.sub(r'\n',' ', eachDocument)
-            temp = temp+''+eachDocument
-        documents = []
-        temp = temp.replace("  "," ")
-        documents = temp.replace(" "," ")
-        rawtext = documents
+    with sample_col:
+        st.image("https://blog.ipleaders.in/wp-content/uploads/2021/02/Mahindra-Judgment-re-Appointment-of-Judicial-Member-.png")
         
     upload_col.header('Upload text file here')
     uploaded_file = upload_col.file_uploader(
