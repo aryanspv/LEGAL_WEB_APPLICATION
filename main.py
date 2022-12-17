@@ -7,14 +7,7 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 import re
-#from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-#from pdfminer.converter import TextConverter
-#from pdfminer.layout import LAParams
-#from pdfminer.pdfpage import PDFPage
-import numpy as np
-import pandas as pd
-from io import StringIO
-from PyPDF2 import PdfReader #For converting PDF to text
+
 
 #from transformers import pipeline
 
