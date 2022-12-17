@@ -99,7 +99,7 @@ def generate_summary(rawtext, top_n=5):
 
 
 with header:
-    st.title(blue['Legal Text Summarization'])
+    st.title('Legal Text Summarization')
 
 with body:
     st.header('Extractive Summarization')
