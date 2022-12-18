@@ -103,7 +103,7 @@ with header:
 
 with body:
     st.header('Extractive Summarization')
-    rawtext = st.text_area('Enter Text Here')
+    
 
     upload_col,sample_col = st.beta_columns(2)
     #sample_col.header('Or select a sample file from below')
