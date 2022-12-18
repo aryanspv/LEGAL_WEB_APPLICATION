@@ -105,7 +105,7 @@ with body:
     st.header('Extractive Summarization')
     rawtext = st.text_area('Enter Text Here')
 
-    sample_col, upload_col = st.beta_columns(2)
+    upload_col,sample_col = st.beta_columns(2)
     #sample_col.header('Or select a sample file from below')
     #sample = sample_col.selectbox('Or select a sample file',
                                   #('kalam_speech.txt', 'Stocks_ FRI_ JUN _8.txt', 'microsoft.txt', 'None'), index=3)
@@ -116,13 +116,13 @@ with body:
     with sample_col:
         st.image('https://blog.ipleaders.in/wp-content/uploads/2021/01/Criminal-Law.jpg')
 
-    upload_col.header('Or upload text file here')
+    upload_col.header('Upload text file here')
     uploaded_file = upload_col.file_uploader(
         'Choose your .txt file', type="txt")
     if uploaded_file is not None:
         rawtext = str(uploaded_file.read(), 'cp1252')
 
-    no_of_lines = st.slider("Select number of lines in summary", 1, 5, 3)
+    no_of_lines = st.slider("Select number of lines in summary", 1, 3, 7)
     if st.button('Get Summary'):
         with summary_container:
             if rawtext == "":
