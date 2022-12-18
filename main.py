@@ -113,6 +113,8 @@ with body:
        # file = open(sample, "r", encoding= 'cp1252')
         #st.write(file)
        # rawtext = file.read()
+    with sample_col:
+        st.image('https://blog.ipleaders.in/wp-content/uploads/2021/01/Criminal-Law.jpg')
 
     upload_col.header('Or upload text file here')
     uploaded_file = upload_col.file_uploader(
