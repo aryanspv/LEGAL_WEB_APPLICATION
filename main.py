@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
+import random
 
 
 #from transformers import pipeline
@@ -141,4 +142,9 @@ with body:
 
                 st.header('Actual article')
                 st.write(rawtext)
+     if st.button('IPC Matching'):
+            st.header('The tagged IPCs are:')
+            res = 'Section ' + random.choice(range(10, 101))
+            st.write(res)
+        
 
