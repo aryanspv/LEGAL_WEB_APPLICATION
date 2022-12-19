@@ -144,7 +144,7 @@ with body:
                 st.write(rawtext)
     if st.button('IPC Matching'):
           st.header('The tagged IPCs are:')
-          res = 'Section ' + random.choice(range(10, 101))
+          res = 'Section ' + str(random.choice(range(10, 101)))
           st.write(res)
         
 
