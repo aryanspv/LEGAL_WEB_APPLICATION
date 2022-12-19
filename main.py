@@ -80,7 +80,6 @@ def generate_summary(rawtext, top_n=5):
         ((scores[i], s) for i, s in enumerate(sentences)), reverse=True)
 
     for i in range(top_n):
-        i = i-1
         summarize_text.append(" ".join(ranked_sentence[i][1]))
 
     # Step 5 - Offcourse, output the summarize texr
