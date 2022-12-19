@@ -7,7 +7,6 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 
-
 #from transformers import pipeline
 
 header = st.beta_container()
